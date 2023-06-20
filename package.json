@@ -1,0 +1,68 @@
+{
+  "name": "@ourworld/ramda-flavored",
+  "version": "0.1.0",
+  "description": "A collection of functions that enhance Ramda",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "lint": "ts-standard",
+    "fix": "ts-standard --fix",
+    "test": "jest",
+    "build": "ts-standard && jest && tsup",
+    "release": "npm run build && standard-version"
+  },
+  "keywords": [
+    "ramda",
+    "flavored",
+    "extended",
+    "ourworld"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ourworldcenter/ramda-flavored.git"
+  },
+  "author": "owfdr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ourworldcenter/ramda-flavored/issues"
+  },
+  "homepage": "https://github.com/ourworldcenter/ramda-flavored#readme",
+  "dependencies": {
+    "ramda": "0.29.0"
+  },
+  "devDependencies": {
+    "@types/ramda": "0.29.2",
+    "typescript": "5.0.4",
+    "@types/jest": "^29.5.2",
+    "@types/node": "^20.2.5",
+    "jest": "^29.5.0",
+    "standard-version": "^9.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-standard": "^12.0.2",
+    "tsup": "^6.7.0"
+  },
+  "ts-standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true
+  }
+}
